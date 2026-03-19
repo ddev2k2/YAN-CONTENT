@@ -1,0 +1,29 @@
+<svg width="1640" height="806" viewBox="0 0 1640 806" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_f_516_1221)">
+<path d="M1576 64V738.82C1311.28 525.997 1102.33 425.318 805.372 425.318C508.416 425.318 310.393 564.156 68.7617 741.323H64V71.0316C302.548 243.636 500.006 377.529 796.2 377.529C1092.39 377.529 1308.13 276.85 1576 64Z" fill="#13553C"/>
+</g>
+<g filter="url(#filter1_f_516_1221)">
+<path d="M1576 134.323V647.955C1457.37 545.735 1203.89 429.117 805.15 429.117C406.407 429.117 162.78 566.973 64 650.765V131.52C148.255 211.922 371.405 370.389 805.758 370.389C1216.73 370.389 1469.46 240.171 1576 134.323Z" fill="#5EE0B6"/>
+</g>
+<g filter="url(#filter2_f_516_1221)">
+<path d="M1576 250.19V535.102C1502.13 504.603 1304.59 436.278 944.044 398.283C1175.98 381.042 1334.59 378.232 1576 250.19Z" fill="#F5F7F6" fill-opacity="0.7"/>
+<path d="M64 250.19V535.102C137.867 504.603 335.409 436.278 695.956 398.283C464.019 381.042 305.409 378.232 64 250.19Z" fill="#F5F7F6" fill-opacity="0.7"/>
+</g>
+<defs>
+<filter id="filter0_f_516_1221" x="0" y="0" width="1640" height="805.323" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="32" result="effect1_foregroundBlur_516_1221"/>
+</filter>
+<filter id="filter1_f_516_1221" x="28" y="95.5195" width="1584" height="591.245" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="18" result="effect1_foregroundBlur_516_1221"/>
+</filter>
+<filter id="filter2_f_516_1221" x="28" y="214.19" width="1584" height="356.912" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="18" result="effect1_foregroundBlur_516_1221"/>
+</filter>
+</defs>
+</svg>
