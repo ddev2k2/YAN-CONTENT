@@ -1,18 +1,18 @@
 <?php
-/**
- * Main template file
- */
-
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 get_header();
+$theme_uri = get_template_directory_uri();
 ?>
 
 <div class="yani-home-container">
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-background"></div>
-        <div class="hero-spotlight">
+        <div class="spotlight-left">
             <div class="ellipse-12"></div>
-            <img class="spotlight-img" src="<?php echo esc_url( yani_asset_url( '516-768.svg' ) ); ?>" alt="Spotlight">
+            <img class="spotlight-img" src="<?php echo esc_url( $theme_uri . '/assets/516-768.svg' ); ?>" alt="Spotlight">
         </div>
         
         <div class="hero-content">
@@ -35,39 +35,36 @@ get_header();
             </div>
         </div>
         
-        <div class="hero-spotlight-right">
+        <div class="spotlight-right">
             <div class="ellipse-12-right"></div>
-            <img class="spotlight-img-right" src="<?php echo esc_url( yani_asset_url( '516-780.svg' ) ); ?>" alt="Spotlight Right">
+            <img class="spotlight-img-right" src="<?php echo esc_url( $theme_uri . '/assets/516-780.svg' ); ?>" alt="Spotlight Right">
         </div>
     </section>
 
     <!-- Partners Section -->
     <section class="partners-section">
         <div class="section-header">
-            <h2 class="section-title gradient-title">Đối tác phù hợp</h2>
+            <h2 class="section-title gradient-text">Đối tác phù hợp</h2>
             <p class="section-description">
                 Thay vì "đăng bài cho có", Yani tập trung xây dựng hệ thống nội dung số & content SEO chiến lược cho doanh nghiệp, bám sát hành trình khách hàng, giải thích đúng vấn đề, tăng niềm tin, và đưa người đọc đến bước liên hệ. Phù hợp doanh nghiệp SME muốn tăng trưởng dài hạn, giảm lệ thuộc quảng cáo.
             </p>
         </div>
         
         <div class="partners-grid">
-            <!-- Partner 1: Xây dựng & Nội thất -->
             <div class="partner-card">
-                <img class="partner-icon" src="<?php echo esc_url( yani_asset_url( '516-792.svg' ) ); ?>" alt="Xây dựng & Nội thất">
+                <img class="partner-icon" src="<?php echo esc_url( $theme_uri . '/assets/516-792.svg' ); ?>" alt="Xây dựng & Nội thất">
                 <h3 class="partner-title">Xây dựng & Nội thất</h3>
                 <p class="partner-description">Thể hiện năng lực thi công và tư duy thẩm mỹ qua từng bài viết kỹ thuật.</p>
             </div>
             
-            <!-- Partner 2: B2B Services -->
             <div class="partner-card">
-                <img class="partner-icon" src="<?php echo esc_url( yani_asset_url( '516-799.svg' ) ); ?>" alt="B2B Services">
+                <img class="partner-icon" src="<?php echo esc_url( $theme_uri . '/assets/516-799.svg' ); ?>" alt="B2B Services">
                 <h3 class="partner-title">B2B Services</h3>
                 <p class="partner-description">Nội dung chuyên sâu giúp thuyết phục ban lãnh đạo và gắn kết đối tác chiến lược dài hạn.</p>
             </div>
             
-            <!-- Partner 3: Y tế & Sức khỏe -->
             <div class="partner-card">
-                <img class="partner-icon" src="<?php echo esc_url( yani_asset_url( '516-804.svg' ) ); ?>" alt="Y tế & Sức khỏe">
+                <img class="partner-icon" src="<?php echo esc_url( $theme_uri . '/assets/516-804.svg' ); ?>" alt="Y tế & Sức khỏe">
                 <h3 class="partner-title">Y tế & Sức khỏe (YMYL)</h3>
                 <p class="partner-description">Tuân thủ tiêu chuẩn EEAT. Nội dung minh bạch, chính xác và có trách nhiệm.</p>
             </div>
@@ -76,14 +73,11 @@ get_header();
 
     <!-- Problem Section -->
     <section class="problem-section">
-        <div class="section-header text-center">
-            <h2 class="problem-main-title">Content có rồi nhưng không ra khách?</h2>
-            <h3 class="problem-subtitle">BẠN CÓ ĐANG GẶP TÌNH HUỐNG NÀY?</h3>
-            <p class="problem-description">Nếu bạn thấy "đúng mình", phần dưới sẽ giúp bạn chọn hướng triển khai phù hợp (không cần gói dài ngay từ đầu).</p>
-        </div>
+        <h2 class="problem-main-title">Content có rồi nhưng không ra khách?</h2>
+        <h3 class="problem-subtitle">BẠN CÓ ĐANG GẶP TÌNH HUỐNG NÀY?</h3>
+        <p class="problem-description">Nếu bạn thấy "đúng mình", phần dưới sẽ giúp bạn chọn hướng triển khai phù hợp (không cần gói dài ngay từ đầu).</p>
         
         <div class="problems-grid">
-            <!-- Problem 1 -->
             <div class="problem-card">
                 <div class="problem-card-inner">
                     <h4 class="problem-card-title">Đăng bài đều nhưng traffic "mỏng"</h4>
@@ -91,7 +85,6 @@ get_header();
                 </div>
             </div>
             
-            <!-- Problem 2 -->
             <div class="problem-card">
                 <div class="problem-card-inner">
                     <h4 class="problem-card-title">Traffic có nhưng conversion thấp</h4>
@@ -99,7 +92,6 @@ get_header();
                 </div>
             </div>
             
-            <!-- Problem 3 -->
             <div class="problem-card">
                 <div class="problem-card-inner">
                     <h4 class="problem-card-title">Viết bài tốn thời gian, chất lượng không ổn định</h4>
@@ -107,7 +99,6 @@ get_header();
                 </div>
             </div>
             
-            <!-- Problem 4 -->
             <div class="problem-card">
                 <div class="problem-card-inner">
                     <h4 class="problem-card-title">Không biết bắt đầu từ đâu</h4>
@@ -117,14 +108,14 @@ get_header();
         </div>
         
         <div class="problem-cta">
-            <button class="btn btn-primary btn-large">Nhắn zalo để được định hướng nhanh</button>
+            <button class="btn btn-primary">Nhắn zalo để được định hướng nhanh</button>
             <p class="problem-hint">Gợi ý: bạn có thể bắt đầu bằng 1–3 bài test để đánh giá chất lượng trước.</p>
         </div>
     </section>
 
     <!-- Services Section -->
     <section class="services-section">
-        <div class="section-header text-center">
+        <div class="section-header">
             <h2 class="section-title">TIÊU CHUẨN NỘI DUNG</h2>
             <h3 class="services-subtitle">GIẢI PHÁP NỘI DUNG CHUYÊN BIỆT</h3>
         </div>
@@ -154,11 +145,34 @@ get_header();
         </div>
     </section>
 
+    <!-- Results Section -->
+    <section class="results-section">
+        <div class="section-header">
+            <h2 class="section-title">HIỆU QUẢ THỰC TẾ</h2>
+            <h3 class="services-subtitle">KẾT QUẢ TỪNG DỰ ÁN</h3>
+        </div>
+        
+        <div class="results-grid">
+            <div class="result-card">
+                <h4 class="result-title">+350% Traffic</h4>
+                <p class="result-description">Tăng organic traffic sau 6 tháng</p>
+            </div>
+            <div class="result-card">
+                <h4 class="result-title">+45% Conversion</h4>
+                <p class="result-description">Cải thiện conversion rate từ content</p>
+            </div>
+            <div class="result-card">
+                <h4 class="result-title">-60% Cost/Lead</h4>
+                <p class="result-description">Giảm chi phí trên mỗi lead từ content</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Process Section -->
     <section class="process-section">
-        <div class="section-header text-center">
+        <div class="section-header">
             <h2 class="section-title">QUY TRÌNH LÀM VIỆC</h2>
-            <h3 class="process-subtitle">CHỌN MỨC ĐẦU TƯ THEO MỤC TIÊU</h3>
+            <h3 class="services-subtitle">CHỌN MỨC ĐẦU TƯ THEO MỤC TIÊU</h3>
         </div>
         
         <div class="process-timeline">
@@ -185,32 +199,9 @@ get_header();
         </div>
     </section>
 
-    <!-- Standards Section -->
-    <section class="standards-section">
-        <div class="section-header text-center">
-            <h2 class="section-title">HIỆU QUẢ THỰC TẾ</h2>
-            <h3 class="standards-subtitle">KẾT QUẢ TỪNG DỰ ÁN</h3>
-        </div>
-        
-        <div class="standards-grid">
-            <div class="standard-card">
-                <h4 class="standard-title">+350% Traffic</h4>
-                <p class="standard-description">Tăng organic traffic sau 6 tháng</p>
-            </div>
-            <div class="standard-card">
-                <h4 class="standard-title">+45% Conversion</h4>
-                <p class="standard-description">Cải thiện conversion rate từ content</p>
-            </div>
-            <div class="standard-card">
-                <h4 class="standard-title">-60% Cost/Lead</h4>
-                <p class="standard-description">Giảm chi phí trên mỗi lead từ content</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Blog Section -->
     <section class="blog-section">
-        <div class="section-header text-center">
+        <div class="section-header">
             <h2 class="section-title">BÀI VIẾT MỚI VỀ CONTENT SEO & UX</h2>
             <p class="section-description">Cập nhật kiến thức, trend, best practice về content marketing và SEO</p>
         </div>
@@ -241,7 +232,7 @@ get_header();
         <div class="cta-content">
             <h2 class="cta-title">SỰ THAY ĐỔI BẮT ĐẦU TỪ ĐÂY</h2>
             <p class="cta-description">Hãy liên hệ với chúng tôi để tìm hiểu cách Yani Content có thể giúp doanh nghiệp của bạn tăng trưởng bền vững.</p>
-            <button class="btn btn-primary btn-large">Nhắn Zalo ngay</button>
+            <button class="btn btn-primary">Nhắn Zalo ngay</button>
         </div>
     </section>
 </div>
