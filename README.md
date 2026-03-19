@@ -1,28 +1,32 @@
-# Yani Content Master - WordPress Page Template
+# Yani Content Home - WordPress Theme
 
 Trang chủ chuyên nghiệp cho Yani Content Master, xây dựng từ thiết kế Figma với giao diện hiện đại, gradient xanh lá cây, và các sections giới thiệu dịch vụ, đối tác, tiêu chuẩn nội dung, quy trình làm việc, và footer.
 
-## 📋 Cấu trúc thư mục
+## 📋 Cấu trúc Theme
 
 ```
-yani-wordpress-template/
-├── template/
-│   └── page-home.php          # WordPress Page Template chính
-├── css/
-│   └── style.css              # Stylesheet chính
-├── assets/                    # Tất cả hình ảnh, icon, SVG từ Figma
+yani-content-theme/
+├── style.css              # Theme info & main stylesheet
+├── header.php             # Header template
+├── footer.php             # Footer template
+├── index.php              # Main template
+├── functions.php          # Theme functions
+├── css/                   # Additional CSS (nếu cần)
+├── js/
+│   └── main.js            # Main JavaScript
+├── assets/                # Tất cả hình ảnh, icon, SVG từ Figma
 │   ├── 516-694.webp
 │   ├── 516-695.svg
 │   ├── 516-701.webp
 │   ├── 516-768.svg
 │   ├── 516-780.svg
-│   ├── 516-792.svg            # Icon Xây dựng & Nội thất
-│   ├── 516-799.svg            # Icon B2B Services
-│   ├── 516-804.svg            # Icon Y tế & Sức khỏe
+│   ├── 516-792.svg        # Icon Xây dựng & Nội thất
+│   ├── 516-799.svg        # Icon B2B Services
+│   ├── 516-804.svg        # Icon Y tế & Sức khỏe
 │   └── ... (nhiều assets khác)
-├── js/                        # JavaScript (nếu cần)
-├── code.jsx                   # Code gốc từ Figma (tham khảo)
-└── README.md                  # File này
+├── template-parts/        # Reusable template parts
+├── inc/                   # Include files
+└── README.md              # File này
 ```
 
 ## 🎨 Thiết kế
@@ -54,48 +58,72 @@ yani-wordpress-template/
 ### Yêu cầu
 - WordPress 5.0+
 - PHP 7.4+
-- Theme hỗ trợ custom page templates
 
 ### Bước cài đặt
 
-1. **Tải file template**
-   - Copy thư mục `yani-wordpress-template` vào thư mục theme của WordPress
-   - Hoặc tạo thư mục con `templates` trong theme
+#### Cách 1: Upload qua FTP (Dễ nhất)
 
-2. **Copy các file**
-   ```bash
-   # Copy template file
-   cp template/page-home.php /path/to/wordpress/wp-content/themes/your-theme/page-home.php
-   
-   # Copy CSS
-   cp css/style.css /path/to/wordpress/wp-content/themes/your-theme/css/yani-style.css
-   
-   # Copy assets
-   cp -r assets/* /path/to/wordpress/wp-content/themes/your-theme/assets/
-   ```
+1. **Tải theme**
+   - Download file ZIP từ GitHub
+   - Giải nén
 
-3. **Tạo trang trong WordPress**
-   - Đăng nhập vào WordPress Admin
-   - Tạo trang mới
-   - Chọn template "Yani Content Home" từ dropdown "Page Template"
-   - Publish
+2. **Upload qua FTP**
+   - Kết nối FTP vào server
+   - Upload thư mục `yani-content-theme` vào:
+     ```
+     /public_html/wp-content/themes/
+     ```
 
-4. **Cập nhật đường dẫn assets**
-   - Mở file `page-home.php`
-   - Thay thế `get_template_directory_uri()` bằng đường dẫn thực tế nếu cần
+3. **Kích hoạt theme**
+   - Đăng nhập WordPress Admin
+   - **Appearance** → **Themes**
+   - Tìm "Yani Content Home"
+   - Nhấn **Activate**
 
-## 📝 Tùy chỉnh
+#### Cách 2: Upload qua WordPress Admin
 
-### Thay đổi nội dung
-Tất cả nội dung được hardcode trong `page-home.php`. Để thay đổi:
+1. **Tải theme**
+   - Download file ZIP từ GitHub
 
-1. Mở `template/page-home.php`
+2. **Upload theme**
+   - WordPress Admin → **Appearance** → **Themes**
+   - Nhấn **Add New** → **Upload Theme**
+   - Chọn file ZIP
+   - Nhấn **Install Now**
+
+3. **Kích hoạt theme**
+   - Nhấn **Activate**
+
+#### Cách 3: Upload qua SSH
+
+```bash
+# SSH vào server
+ssh username@yourdomain.com
+
+# Điều hướng đến themes
+cd ~/public_html/wp-content/themes/
+
+# Clone repository
+git clone https://github.com/ddev2k2/YAN-CONTENT.git yani-content-theme
+
+# Hoặc: Upload file ZIP và giải nén
+unzip yani-content-theme.zip
+```
+
+## ⚙️ Tùy chỉnh
+
+### Thay đổi Nội dung
+
+Tất cả nội dung được hardcode trong `index.php`. Để thay đổi:
+
+1. Mở `index.php`
 2. Tìm section cần thay đổi
 3. Cập nhật text, link, hoặc hình ảnh
-4. Save và reload trang
+4. Save file
 
-### Thay đổi màu sắc
-Tất cả màu sắc được định nghĩa trong `:root` của `css/style.css`:
+### Thay đổi Màu sắc
+
+Tất cả màu sắc được định nghĩa trong `:root` của `style.css`:
 
 ```css
 :root {
@@ -105,67 +133,63 @@ Tất cả màu sắc được định nghĩa trong `:root` của `css/style.css
 }
 ```
 
-### Thay đổi font
-Font được import từ Google Fonts trong `page-home.php`:
+### Thay đổi Font
+
+Font được import từ Google Fonts trong `header.php`:
 
 ```html
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 ```
 
-## 🔗 Assets
+### Thay đổi Hình ảnh
 
-Tất cả assets (hình ảnh, icon, SVG) được lưu trong thư mục `assets/` và được đặt tên theo node ID từ Figma:
+Tất cả hình ảnh được lưu trong thư mục `assets/`. Để thay đổi:
 
-- `516-694.webp` - Background vô cực (hero)
-- `516-695.svg` - Background bảng giá
-- `516-701.webp` - Background vô cực (phải)
-- `516-768.svg` - Spotlight hero
-- `516-780.svg` - Spotlight phải
-- `516-792.svg` - Icon Xây dựng & Nội thất
-- `516-799.svg` - Icon B2B Services
-- `516-804.svg` - Icon Y tế & Sức khỏe
-- ... (nhiều assets khác)
+1. Tải hình ảnh mới lên thư mục `assets/`
+2. Mở `index.php`
+3. Tìm tag `<img>` cần thay đổi
+4. Thay đổi `src`:
+   ```php
+   <img src="<?php echo esc_url( yani_asset_url( 'new-image.svg' ) ); ?>" alt="...">
+   ```
 
 ## 📱 Responsive Design
 
-Template được thiết kế responsive cho tất cả kích thước màn hình:
+Theme được thiết kế responsive cho tất cả kích thước màn hình:
 
 - **Desktop**: 1440px
 - **Tablet**: 768px
 - **Mobile**: 480px
 
-Breakpoints được định nghĩa trong `css/style.css` sử dụng media queries.
+Breakpoints được định nghĩa trong `style.css` sử dụng media queries.
 
-## ⚙️ Tối ưu hóa
+## 🔧 Tính năng
 
-### Performance
-- Sử dụng WebP cho hình ảnh lớn
-- SVG cho icon (nhẹ hơn)
-- CSS được tối ưu hóa
-- Không sử dụng JavaScript nặng
-
-### SEO
-- Semantic HTML
-- Proper heading hierarchy
-- Meta tags trong header
-- Alt text cho hình ảnh
+- ✅ Fully responsive design
+- ✅ SEO optimized
+- ✅ Fast loading (optimized CSS)
+- ✅ Custom logo support
+- ✅ Widget areas
+- ✅ Navigation menus
+- ✅ Accessibility ready
+- ✅ Translation ready
 
 ## 🐛 Troubleshooting
 
-### Template không xuất hiện
-- Đảm bảo file `page-home.php` nằm trong thư mục theme
-- Kiểm tra header của file: `Template Name: Yani Content Home`
+### Theme không xuất hiện
+- Kiểm tra file `style.css` có header đúng không
+- Kiểm tra theme nằm trong thư mục `/wp-content/themes/` không
 - Clear WordPress cache
 
 ### CSS không load
-- Kiểm tra đường dẫn `get_template_directory_uri()`
-- Đảm bảo file `style.css` nằm trong thư mục `css/`
+- Kiểm tra đường dẫn trong `header.php`
+- Kiểm tra file `style.css` tồn tại không
 - Clear browser cache
 
 ### Hình ảnh không hiển thị
-- Kiểm tra đường dẫn assets trong `page-home.php`
-- Đảm bảo tất cả file assets nằm trong thư mục `assets/`
-- Kiểm tra permissions của thư mục
+- Kiểm tra tất cả file assets nằm trong thư mục `assets/`
+- Kiểm trap permissions của thư mục
+- Xem Developer Tools (F12) → Network tab
 
 ## 📞 Liên hệ
 
@@ -176,7 +200,15 @@ Breakpoints được định nghĩa trong `css/style.css` sử dụng media quer
 
 ## 📄 License
 
-Tất cả nội dung và thiết kế thuộc quyền sở hữu của Yani Content Master.
+GPL v2 or later
+
+## 🔐 Security
+
+- Removed emoji detection scripts
+- Removed XML-RPC
+- Removed WordPress version from header
+- Disabled comments by default
+- Escaped all output with `esc_url()`, `esc_html()`, etc.
 
 ---
 
